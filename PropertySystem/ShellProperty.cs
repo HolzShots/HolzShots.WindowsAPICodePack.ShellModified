@@ -128,7 +128,7 @@ namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem
                         LocalizedMessages.ShellPropertyWrongType, ValueType.Name));
                 }
 
-                if (value is Nullable)
+                if (typeof(T) == typeof(Nullable))
                 {
                     var t = typeof(T);
                     var pi = t.GetProperty("HasValue");
