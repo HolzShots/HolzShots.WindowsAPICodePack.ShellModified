@@ -1,24 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <PackageId>HolzShots.WindowsAPICodePack.ShellModified</PackageId>
-    <AssemblyName>HolzShots.WindowsAPICodePack.ShellModified</AssemblyName>
-    <VersionPrefix>3.0.0</VersionPrefix>
-    <Version>3.0.0</Version>
-    <Title>$(AssemblyName) - modified</Title>
-    <Authors>rpastric;contre;dahall;nikeee</Authors>
+    <RootNamespace>Microsoft.WindowsAPICodePack.Shell</RootNamespace>
 
-    <Copyright>Copyright © 2022</Copyright>
+    <TargetFrameworks>net7.0-windows</TargetFrameworks>
+    <Version>4.0.0</Version>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+
+    <Title>$(AssemblyName) - modified</Title>
+
     <NeutralLanguage>en-US</NeutralLanguage>
 
     <IncludeSymbols>true</IncludeSymbols>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-
-    <TargetFrameworks>net7.0-windows</TargetFrameworks>
-    <UseWindowsForms>true</UseWindowsForms>
-    <LangVersion>latest</LangVersion>
-    <RootNamespace>Microsoft.WindowsAPICodePack.Shell</RootNamespace>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>rpastric;contre;dahall;nikeee</Authors>
+
+    <PackageProjectUrl>https://github.com/HolzShots/HolzShots.WindowsAPICodePack.ShellModified</PackageProjectUrl>
+
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>none</ErrorReport>
+
+    <MinimumPlatformVersion>10.0.17763.0</MinimumPlatformVersion>
+    <RepositoryUrl>https://github.com/HolzShots/HolzShots.WindowsAPICodePack.ShellModified</RepositoryUrl>
+
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Resources\LocalizedMessages.Designer.cs">
