@@ -1,6 +1,7 @@
 //Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using Microsoft.WindowsAPICodePack.Shell;
 using MS.WindowsAPICodePack.Internal;
@@ -10,7 +11,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
     /// <summary>
     /// Represents a taskbar thumbnail button in the thumbnail toolbar.
     /// </summary>
-    public sealed class ThumbnailToolBarButton : IDisposable
+    public sealed class ThumbnailToolBarButton : IDisposable, IComponent
     {
         private static uint nextId = 101;
         private ThumbButton win32ThumbButton;
@@ -20,6 +21,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// is clicked.
         /// </summary>
         public event EventHandler<ThumbnailButtonClickedEventArgs> Click;
+        public event EventHandler Disposed;
 
         // Internal bool to track whether we should be updating the taskbar 
         // if any of our properties change or if it's just an internal update
@@ -286,6 +288,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
             get;
             set;
         }
+        public ISite Site { get; set; }
 
         internal void UpdateThumbnailButton()
         {
@@ -332,6 +335,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
                 Icon.Dispose();
                 tooltip = null;
             }
+            Disposed?.Invoke(this, EventArgs.Empty);
         }
 
         #endregion
