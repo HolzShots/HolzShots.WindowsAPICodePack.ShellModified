@@ -11,7 +11,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
     /// <summary>
     /// Represents a taskbar thumbnail button in the thumbnail toolbar.
     /// </summary>
-    public sealed class ThumbnailToolBarButton : IDisposable, IComponent
+    public sealed class ThumbnailToolBarButton : Component
     {
         private static uint nextId = 101;
         private ThumbButton win32ThumbButton;
@@ -21,7 +21,6 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// is clicked.
         /// </summary>
         public event EventHandler<ThumbnailButtonClickedEventArgs> Click;
-        public event EventHandler Disposed;
 
         // Internal bool to track whether we should be updating the taskbar 
         // if any of our properties change or if it's just an internal update
@@ -288,7 +287,6 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
             get;
             set;
         }
-        public ISite Site { get; set; }
 
         internal void UpdateThumbnailButton()
         {
@@ -304,30 +302,13 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
 
         #endregion
 
-        #region IDisposable Members
-
-        /// <summary>
-        /// 
-        /// </summary>
-        ~ThumbnailToolBarButton()
-        {
-            Dispose(false);
-        }
-
-        /// <summary>
-        /// Release the native objects.
-        /// </summary>
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
+        #region I
 
         /// <summary>
         /// Release the native objects.
         /// </summary>
         /// <param name="disposing"></param>
-        public void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
@@ -335,7 +316,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
                 Icon.Dispose();
                 tooltip = null;
             }
-            Disposed?.Invoke(this, EventArgs.Empty);
+            base.Dispose(disposing);
         }
 
         #endregion
