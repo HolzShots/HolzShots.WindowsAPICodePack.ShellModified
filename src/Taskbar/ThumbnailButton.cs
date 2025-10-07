@@ -66,12 +66,14 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// <summary>
         /// Gets thumbnail button's id.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         internal uint Id { get; set; }
 
         private Icon icon;
         /// <summary>
         /// Gets or sets the thumbnail button's icon.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Icon Icon
         {
             get => icon;
@@ -89,6 +91,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// <summary>
         /// Gets or sets the thumbnail button's tooltip.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string Tooltip
         {
             get => tooltip;
@@ -106,6 +109,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// <summary>
         /// Gets or sets the thumbnail button's visibility. Default is true.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool Visible
         {
             get => (Flags & ThumbButtonOptions.Hidden) == 0;
@@ -135,6 +139,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// Gets or sets the thumbnail button's enabled state. If the button is disabled, it is present, 
         /// but has a visual state that indicates that it will not respond to user action. Default is true.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool Enabled
         {
             get => (Flags & ThumbButtonOptions.Disabled) == 0;
@@ -163,6 +168,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// Gets or sets the property that describes the behavior when the button is clicked. 
         /// If set to true, the taskbar button's flyout will close immediately. Default is false.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool DismissOnClick
         {
             get => (Flags & ThumbButtonOptions.DismissOnClick) == 0;
@@ -195,6 +201,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// They are intended to be used as status icons. This is mostly similar to being not Enabled, 
         /// but the image is not desaturated.
         /// </remarks>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool IsInteractive
         {
             get => (Flags & ThumbButtonOptions.NonInteractive) == 0;
@@ -225,6 +232,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// <summary>
         /// Native flags enum (used when creating the native button)
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         internal ThumbButtonOptions Flags { get; set; }
 
         /// <summary>
@@ -272,21 +280,15 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// <summary>
         /// Handle to the window to which this button is for (on the taskbar).
         /// </summary>
-        internal IntPtr WindowHandle
-        {
-            get;
-            set;
-        }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        internal IntPtr WindowHandle { get; set; }
 
         /// <summary>
         /// Indicates if this button was added to the taskbar. If it's not yet added,
         /// then we can't do any updates on it.
         /// </summary>
-        internal bool AddedToTaskbar
-        {
-            get;
-            set;
-        }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        internal bool AddedToTaskbar { get; set; }
 
         internal void UpdateThumbnailButton()
         {
