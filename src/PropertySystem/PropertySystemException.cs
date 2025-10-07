@@ -26,15 +26,5 @@ namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem
         /// <param name="message"></param>
         /// <param name="errorCode"></param>
         public PropertySystemException(string message, int errorCode) : base(message, errorCode) { }
-
-        /// <summary>Initializes an exception from serialization info and a context.</summary>
-        /// <param name="info"></param>
-        /// <param name="context"></param>
-        protected PropertySystemException(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
     }
 }

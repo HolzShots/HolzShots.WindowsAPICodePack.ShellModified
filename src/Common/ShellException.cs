@@ -44,15 +44,5 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <param name="message"></param>
         /// <param name="errorCode"></param>
         internal ShellException(string message, HResult errorCode) : this(message, (int)errorCode) { }
-
-        /// <summary>Initializes an exception from serialization info and a context.</summary>
-        /// <param name="info"></param>
-        /// <param name="context"></param>
-        protected ShellException(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
     }
 }
