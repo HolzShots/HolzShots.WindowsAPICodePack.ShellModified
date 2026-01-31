@@ -1,100 +1,97 @@
-//Copyright (c) Microsoft Corporation.  All rights reserved.
-
 using MS.WindowsAPICodePack.Internal;
 
-namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem
+namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem;
+
+/// <summary>Defines the enumeration values for a property type.</summary>
+public class ShellPropertyEnumType
 {
-    /// <summary>Defines the enumeration values for a property type.</summary>
-    public class ShellPropertyEnumType
+    private string displayText;
+    private PropEnumType? enumType;
+    private object minValue, setValue, enumerationValue;
+
+    internal ShellPropertyEnumType(IPropertyEnumType nativePropertyEnumType) => NativePropertyEnumType = nativePropertyEnumType;
+
+    /// <summary>Gets display text from an enumeration information structure.</summary>
+    public string DisplayText
     {
-        private string displayText;
-        private PropEnumType? enumType;
-        private object minValue, setValue, enumerationValue;
-
-        internal ShellPropertyEnumType(IPropertyEnumType nativePropertyEnumType) => NativePropertyEnumType = nativePropertyEnumType;
-
-        /// <summary>Gets display text from an enumeration information structure.</summary>
-        public string DisplayText
+        get
         {
-            get
+            if (displayText == null)
             {
-                if (displayText == null)
-                {
-                    NativePropertyEnumType.GetDisplayText(out displayText);
-                }
-                return displayText;
+                NativePropertyEnumType.GetDisplayText(out displayText);
             }
+            return displayText;
         }
+    }
 
-        /// <summary>Gets an enumeration type from an enumeration information structure.</summary>
-        public PropEnumType EnumType
+    /// <summary>Gets an enumeration type from an enumeration information structure.</summary>
+    public PropEnumType EnumType
+    {
+        get
         {
-            get
+            if (!enumType.HasValue)
             {
-                if (!enumType.HasValue)
-                {
-                    NativePropertyEnumType.GetEnumType(out var tempEnumType);
-                    enumType = tempEnumType;
-                }
-                return enumType.Value;
+                NativePropertyEnumType.GetEnumType(out var tempEnumType);
+                enumType = tempEnumType;
             }
+            return enumType.Value;
         }
+    }
 
-        /// <summary>Gets a minimum value from an enumeration information structure.</summary>
-        public object RangeMinValue
+    /// <summary>Gets a minimum value from an enumeration information structure.</summary>
+    public object RangeMinValue
+    {
+        get
         {
-            get
+            if (minValue == null)
             {
-                if (minValue == null)
+                using (var propVar = new PropVariant())
                 {
-                    using (var propVar = new PropVariant())
-                    {
-                        NativePropertyEnumType.GetRangeMinValue(propVar);
-                        minValue = propVar.Value;
-                    }
+                    NativePropertyEnumType.GetRangeMinValue(propVar);
+                    minValue = propVar.Value;
                 }
-                return minValue;
             }
+            return minValue;
         }
+    }
 
-        /// <summary>Gets a set value from an enumeration information structure.</summary>
-        public object RangeSetValue
+    /// <summary>Gets a set value from an enumeration information structure.</summary>
+    public object RangeSetValue
+    {
+        get
         {
-            get
+            if (setValue == null)
             {
-                if (setValue == null)
+                using (var propVar = new PropVariant())
                 {
-                    using (var propVar = new PropVariant())
-                    {
-                        NativePropertyEnumType.GetRangeSetValue(propVar);
-                        setValue = propVar.Value;
-                    }
+                    NativePropertyEnumType.GetRangeSetValue(propVar);
+                    setValue = propVar.Value;
                 }
-                return setValue;
             }
+            return setValue;
         }
+    }
 
-        /// <summary>Gets a value from an enumeration information structure.</summary>
-        public object RangeValue
+    /// <summary>Gets a value from an enumeration information structure.</summary>
+    public object RangeValue
+    {
+        get
         {
-            get
+            if (enumerationValue == null)
             {
-                if (enumerationValue == null)
+                using (var propVar = new PropVariant())
                 {
-                    using (var propVar = new PropVariant())
-                    {
-                        NativePropertyEnumType.GetValue(propVar);
-                        enumerationValue = propVar.Value;
-                    }
+                    NativePropertyEnumType.GetValue(propVar);
+                    enumerationValue = propVar.Value;
                 }
-                return enumerationValue;
             }
+            return enumerationValue;
         }
+    }
 
-        private IPropertyEnumType NativePropertyEnumType
-        {
-            set;
-            get;
-        }
+    private IPropertyEnumType NativePropertyEnumType
+    {
+        set;
+        get;
     }
 }

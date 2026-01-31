@@ -1,56 +1,53 @@
-//Copyright (c) Microsoft Corporation.  All rights reserved.
-
 using MS.WindowsAPICodePack.Internal;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace Microsoft.WindowsAPICodePack.Shell
+namespace Microsoft.WindowsAPICodePack.Shell;
+
+internal class EnumUnknownClass : IEnumUnknown
 {
-    internal class EnumUnknownClass : IEnumUnknown
+    private readonly List<ICondition> conditionList = new List<ICondition>();
+    private int current = -1;
+
+    internal EnumUnknownClass(ICondition[] conditions) => conditionList.AddRange(conditions);
+
+    public HResult Clone(out IEnumUnknown result)
     {
-        private readonly List<ICondition> conditionList = new List<ICondition>();
-        private int current = -1;
+        result = new EnumUnknownClass(conditionList.ToArray());
+        return HResult.Ok;
+    }
 
-        internal EnumUnknownClass(ICondition[] conditions) => conditionList.AddRange(conditions);
+    public HResult Next(uint requestedNumber, ref IntPtr buffer, ref uint fetchedNumber)
+    {
+        current++;
 
-        public HResult Clone(out IEnumUnknown result)
+        if (current < conditionList.Count)
         {
-            result = new EnumUnknownClass(conditionList.ToArray());
+            buffer = Marshal.GetIUnknownForObject(conditionList[current]);
+            fetchedNumber = 1;
             return HResult.Ok;
         }
 
-        public HResult Next(uint requestedNumber, ref IntPtr buffer, ref uint fetchedNumber)
+        return HResult.False;
+    }
+
+    public HResult Reset()
+    {
+        current = -1;
+        return HResult.Ok;
+    }
+
+    public HResult Skip(uint number)
+    {
+        var temp = current + (int)number;
+
+        if (temp > (conditionList.Count - 1))
         {
-            current++;
-
-            if (current < conditionList.Count)
-            {
-                buffer = Marshal.GetIUnknownForObject(conditionList[current]);
-                fetchedNumber = 1;
-                return HResult.Ok;
-            }
-
             return HResult.False;
         }
 
-        public HResult Reset()
-        {
-            current = -1;
-            return HResult.Ok;
-        }
-
-        public HResult Skip(uint number)
-        {
-            var temp = current + (int)number;
-
-            if (temp > (conditionList.Count - 1))
-            {
-                return HResult.False;
-            }
-
-            current = temp;
-            return HResult.Ok;
-        }
+        current = temp;
+        return HResult.Ok;
     }
 }

@@ -1,5 +1,3 @@
-//Copyright (c) Microsoft Corporation.  All rights reserved.
-
 using Microsoft.WindowsAPICodePack.Shell;
 using MS.WindowsAPICodePack.Internal;
 using System;
@@ -22,7 +20,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// </summary>
         public event EventHandler<ThumbnailButtonClickedEventArgs> Click;
 
-        // Internal bool to track whether we should be updating the taskbar 
+        // Internal bool to track whether we should be updating the taskbar
         // if any of our properties change or if it's just an internal update
         // on the properties (via the constructor)
         private readonly bool internalUpdate = false;
@@ -54,7 +52,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
             // Defaults
             Enabled = true;
 
-            // Create a native 
+            // Create a native
             win32ThumbButton = new ThumbButton();
 
             // End our internal update
@@ -136,7 +134,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
 
         private bool enabled = true;
         /// <summary>
-        /// Gets or sets the thumbnail button's enabled state. If the button is disabled, it is present, 
+        /// Gets or sets the thumbnail button's enabled state. If the button is disabled, it is present,
         /// but has a visual state that indicates that it will not respond to user action. Default is true.
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
@@ -165,7 +163,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
 
         private bool dismissOnClick;
         /// <summary>
-        /// Gets or sets the property that describes the behavior when the button is clicked. 
+        /// Gets or sets the property that describes the behavior when the button is clicked.
         /// If set to true, the taskbar button's flyout will close immediately. Default is false.
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
@@ -198,7 +196,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// </summary>
         /// <remarks>
         /// Non-interactive buttons don't display any hover behavior nor do they raise click events.
-        /// They are intended to be used as status icons. This is mostly similar to being not Enabled, 
+        /// They are intended to be used as status icons. This is mostly similar to being not Enabled,
         /// but the image is not desaturated.
         /// </remarks>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]

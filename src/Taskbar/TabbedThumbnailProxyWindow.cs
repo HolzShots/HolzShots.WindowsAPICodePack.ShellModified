@@ -1,5 +1,3 @@
-// Copyright (c) Microsoft Corporation.  All rights reserved.
-
 using MS.WindowsAPICodePack.Internal;
 using System;
 using System.Windows.Forms;
@@ -46,7 +44,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         #region IDisposable Members
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ~TabbedThumbnailProxyWindow()
         {
