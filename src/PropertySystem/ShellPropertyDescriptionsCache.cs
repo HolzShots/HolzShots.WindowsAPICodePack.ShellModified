@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 
 internal class ShellPropertyDescriptionsCache

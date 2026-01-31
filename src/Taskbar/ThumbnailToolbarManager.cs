@@ -1,5 +1,4 @@
 using Microsoft.WindowsAPICodePack.Resources;
-using System;
 
 namespace Microsoft.WindowsAPICodePack.Taskbar;
 

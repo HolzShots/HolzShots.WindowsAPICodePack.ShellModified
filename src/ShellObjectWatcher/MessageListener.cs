@@ -1,10 +1,7 @@
 using Microsoft.WindowsAPICodePack.Resources;
 using Microsoft.WindowsAPICodePack.Shell.Interop;
 using MS.WindowsAPICodePack.Internal;
-using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Threading;
 
 namespace Microsoft.WindowsAPICodePack.Shell;
 
@@ -127,7 +124,7 @@ internal class MessageListener : IDisposable
 
         while (_running)
         {
-            Message msg;
+            Interop.Message msg;
             if (ShellObjectWatcherNativeMethods.GetMessage(out msg, IntPtr.Zero, 0, 0))
             {
                 ShellObjectWatcherNativeMethods.DispatchMessage(ref msg);
@@ -153,7 +150,7 @@ internal class MessageListener : IDisposable
                 MessageListener listener;
                 if (_listeners.TryGetValue(hwnd, out listener))
                 {
-                    Message message = new Message(hwnd, msg, wparam, lparam, 0, new NativePoint());
+                    var message = new Interop.Message(hwnd, msg, wparam, lparam, 0, new NativePoint());
                     listener.MessageReceived.SafeRaise(listener, new WindowMessageEventArgs(message));
                 }
                 break;
@@ -205,7 +202,7 @@ public class WindowMessageEventArgs : EventArgs
     /// <summary>
     /// Received windows message.
     /// </summary>
-    public Message Message { get; private set; }
+    public Interop.Message Message { get; private set; }
 
-    internal WindowMessageEventArgs(Message msg) => Message = msg;
+    internal WindowMessageEventArgs(Interop.Message msg) => Message = msg;
 }

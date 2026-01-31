@@ -1,5 +1,3 @@
-using System;
-
 namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 
 /// <summary>Defines the properties used by a Shell Property.</summary>

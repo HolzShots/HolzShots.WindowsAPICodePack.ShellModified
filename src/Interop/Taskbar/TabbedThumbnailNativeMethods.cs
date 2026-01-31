@@ -1,5 +1,4 @@
 using Microsoft.WindowsAPICodePack.Shell;
-using System;
 using System.Runtime.InteropServices;
 
 namespace Microsoft.WindowsAPICodePack.Taskbar;

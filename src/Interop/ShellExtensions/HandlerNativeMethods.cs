@@ -1,6 +1,4 @@
 using MS.WindowsAPICodePack.Internal;
-using System;
-using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 

@@ -1,5 +1,3 @@
-using System;
-
 namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 
 /// <summary>Property Enumeration Types</summary>

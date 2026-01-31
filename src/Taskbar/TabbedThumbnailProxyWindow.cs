@@ -1,6 +1,4 @@
 using MS.WindowsAPICodePack.Internal;
-using System;
-using System.Windows.Forms;
 
 namespace Microsoft.WindowsAPICodePack.Taskbar
 {

@@ -1,9 +1,7 @@
 using Microsoft.WindowsAPICodePack.Shell;
 using MS.WindowsAPICodePack.Internal;
-using System;
 using System.ComponentModel;
 using System.Text;
-using System.Windows.Forms;
 
 namespace Microsoft.WindowsAPICodePack.Controls.WindowsForms
 {

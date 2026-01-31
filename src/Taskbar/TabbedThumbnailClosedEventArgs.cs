@@ -1,5 +1,3 @@
-using System;
-
 namespace Microsoft.WindowsAPICodePack.Taskbar;
 
 /// <summary>

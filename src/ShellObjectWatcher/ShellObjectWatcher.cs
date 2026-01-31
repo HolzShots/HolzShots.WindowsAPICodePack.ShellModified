@@ -1,7 +1,5 @@
 using Microsoft.WindowsAPICodePack.Resources;
-using System;
 using System.ComponentModel;
-using System.Threading;
 
 namespace Microsoft.WindowsAPICodePack.Shell;
 

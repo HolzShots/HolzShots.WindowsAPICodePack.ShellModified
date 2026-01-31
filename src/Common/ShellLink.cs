@@ -1,5 +1,3 @@
-using System;
-
 namespace Microsoft.WindowsAPICodePack.Shell;
 
 /// <summary>Represents a link to existing FileSystem or Virtual item.</summary>

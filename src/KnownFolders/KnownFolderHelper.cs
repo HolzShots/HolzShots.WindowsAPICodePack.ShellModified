@@ -1,6 +1,5 @@
 using Microsoft.WindowsAPICodePack.Resources;
 using MS.WindowsAPICodePack.Internal;
-using System;
 using System.Diagnostics;
 
 namespace Microsoft.WindowsAPICodePack.Shell;

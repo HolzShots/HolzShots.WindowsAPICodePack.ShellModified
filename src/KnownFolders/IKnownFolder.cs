@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-
 namespace Microsoft.WindowsAPICodePack.Shell;
 
 /// <summary>Represents a registered or known folder in the system.</summary>

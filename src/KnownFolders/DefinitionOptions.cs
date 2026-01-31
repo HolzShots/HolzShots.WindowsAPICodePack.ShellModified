@@ -1,5 +1,3 @@
-using System;
-
 namespace Microsoft.WindowsAPICodePack.Shell;
 
 /// <summary>Specifies behaviors for known folders.</summary>

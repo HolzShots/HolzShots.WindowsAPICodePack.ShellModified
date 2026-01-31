@@ -1,5 +1,4 @@
 using Microsoft.WindowsAPICodePack.Resources;
-using System;
 using System.Runtime.InteropServices;
 
 namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem;

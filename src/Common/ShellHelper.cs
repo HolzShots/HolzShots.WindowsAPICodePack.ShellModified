@@ -1,8 +1,6 @@
 using Microsoft.WindowsAPICodePack.Resources;
 using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 using MS.WindowsAPICodePack.Internal;
-using System;
-using System.IO;
 using System.Runtime.InteropServices;
 
 namespace Microsoft.WindowsAPICodePack.Shell;

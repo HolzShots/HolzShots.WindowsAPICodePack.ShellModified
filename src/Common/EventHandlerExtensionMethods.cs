@@ -1,5 +1,3 @@
-using System;
-
 namespace Microsoft.WindowsAPICodePack.Shell;
 
 /// <summary>Provides extension methods for raising events safely.</summary>

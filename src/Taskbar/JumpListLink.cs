@@ -2,7 +2,6 @@ using Microsoft.WindowsAPICodePack.Resources;
 using Microsoft.WindowsAPICodePack.Shell;
 using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 using MS.WindowsAPICodePack.Internal;
-using System;
 using System.Runtime.InteropServices;
 
 namespace Microsoft.WindowsAPICodePack.Taskbar;

@@ -1,6 +1,4 @@
 using Microsoft.WindowsAPICodePack.Shell;
-using System;
-using System.Drawing;
 
 namespace Microsoft.WindowsAPICodePack.Taskbar;
 

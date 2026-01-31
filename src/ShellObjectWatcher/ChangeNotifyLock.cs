@@ -1,7 +1,4 @@
-
-using Microsoft.WindowsAPICodePack.Shell.Interop;
 using MS.WindowsAPICodePack.Internal;
-using System;
 using System.Diagnostics;
 
 namespace Microsoft.WindowsAPICodePack.Shell;
@@ -10,7 +7,7 @@ internal class ChangeNotifyLock
 {
     private readonly uint _event = 0;
 
-    internal ChangeNotifyLock(Message message)
+    internal ChangeNotifyLock(Interop.Message message)
     {
         var lockId = ShellNativeMethods.SHChangeNotification_Lock(
                 message.WParam, (int)message.LParam, out var pidl, out _event);

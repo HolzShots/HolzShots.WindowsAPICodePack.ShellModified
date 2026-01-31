@@ -1,5 +1,4 @@
 using MS.WindowsAPICodePack.Internal;
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

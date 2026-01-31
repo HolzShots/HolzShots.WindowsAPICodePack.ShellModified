@@ -1,10 +1,7 @@
 using Microsoft.WindowsAPICodePack.Resources;
 using MS.WindowsAPICodePack.Internal;
-using System;
-using System.Collections.Generic;
 
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Runtime.InteropServices;
 
 namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem;
