@@ -1,9 +1,9 @@
 //Copyright (c) Microsoft Corporation.  All rights reserved.
 
-using System;
-using System.Diagnostics;
 using Microsoft.WindowsAPICodePack.Resources;
 using MS.WindowsAPICodePack.Internal;
+using System;
+using System.Diagnostics;
 
 namespace Microsoft.WindowsAPICodePack.Taskbar
 {

@@ -1,7 +1,7 @@
-using System;
-using System.Runtime.InteropServices;
 using Microsoft.WindowsAPICodePack.Resources;
 using MS.WindowsAPICodePack.Internal;
+using System;
+using System.Runtime.InteropServices;
 
 namespace Microsoft.WindowsAPICodePack.Shell
 {

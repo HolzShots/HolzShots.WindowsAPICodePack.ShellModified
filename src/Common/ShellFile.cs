@@ -1,7 +1,7 @@
 //Copyright (c) Microsoft Corporation.  All rights reserved.
 
-using System.IO;
 using Microsoft.WindowsAPICodePack.Resources;
+using System.IO;
 
 namespace Microsoft.WindowsAPICodePack.Shell
 {

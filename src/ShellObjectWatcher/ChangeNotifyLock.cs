@@ -1,8 +1,8 @@
 
-using System;
-using System.Diagnostics;
 using Microsoft.WindowsAPICodePack.Shell.Interop;
 using MS.WindowsAPICodePack.Internal;
+using System;
+using System.Diagnostics;
 
 namespace Microsoft.WindowsAPICodePack.Shell
 {

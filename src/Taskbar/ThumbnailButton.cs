@@ -1,10 +1,10 @@
 //Copyright (c) Microsoft Corporation.  All rights reserved.
 
+using Microsoft.WindowsAPICodePack.Shell;
+using MS.WindowsAPICodePack.Internal;
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using Microsoft.WindowsAPICodePack.Shell;
-using MS.WindowsAPICodePack.Internal;
 
 namespace Microsoft.WindowsAPICodePack.Taskbar
 {

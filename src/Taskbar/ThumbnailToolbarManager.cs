@@ -1,7 +1,7 @@
 //Copyright (c) Microsoft Corporation.  All rights reserved.
 
-using System;
 using Microsoft.WindowsAPICodePack.Resources;
+using System;
 
 namespace Microsoft.WindowsAPICodePack.Taskbar
 {

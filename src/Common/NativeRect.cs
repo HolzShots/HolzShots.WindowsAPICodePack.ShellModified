@@ -1,5 +1,5 @@
-using System.Runtime.InteropServices;
 using Microsoft.WindowsAPICodePack.Shell.Interop;
+using System.Runtime.InteropServices;
 
 namespace Microsoft.WindowsAPICodePack.Shell
 {
